@@ -57,7 +57,7 @@ class CMA {
     this.cmu = Math.min(
       1 - this.c1 - 1e-8, // 1e-8 is for large popsize.
       (alpha_cov * (this.mu_eff - 2 + 1 / this.mu_eff)) /
-        ((this.n_dim + 2) ** 2 + (alpha_cov * this.mu_eff) / 2)
+      ((this.n_dim + 2) ** 2 + (alpha_cov * this.mu_eff) / 2)
     )
     console.assert(
       this.c1 <= 1 - this.cmu,
@@ -570,18 +570,18 @@ class SqMatrix {
   }
 }
 
-// function SqMatrixFromDiag(diag) {
-//   let n = diag.length
-//   let data = Array(n * n).fill(0)
-//   for (let i = 0; i < n; i++) {
-//     data[i * (1 + n)] = diag[i]
-//   }
-//   return new SqMatrix(data)
-// }
+function SqMatrixFromDiag(diag) {
+  let n = diag.length
+  let data = Array(n * n).fill(0)
+  for (let i = 0; i < n; i++) {
+    data[i * (1 + n)] = diag[i]
+  }
+  return new SqMatrix(data)
+}
 
-// function Eye(dim) {
-//   return SqMatrixFromDiag(Array(dim).fill(1))
-// }
+function Eye(dim) {
+  return SqMatrixFromDiag(Array(dim).fill(1))
+}
 
 function pythag(a, b) {
   let absa = Math.abs(a)
