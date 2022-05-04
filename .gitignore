@@ -1,2 +1,8 @@
 # Local Netlify folder
 .netlify
+
+# MacOS stuff
+.DS_Store
+
+# Ignore VS Code settings
+.vscode/*
