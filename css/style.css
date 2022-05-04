@@ -1,0 +1,8 @@
+body {
+  background-color: gray;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}

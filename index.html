@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy Hot Dogs</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- load Box2D -->
+    <script>
+      const Module = { TOTAL_MEMORY: 256 * 1024 * 1024 }
+    </script>
+    <script src="./lib/Box2D/Box2D_v2.3.1_min.wasm.js"></script>
+    <script src="./lib/Box2D/loadBox2D.js"></script>
+    <!-- load tfjs -->
+    <script src="./lib/tfjs/tf.min.js"></script>
+    <script src="./lib/tfjs/tfjs-backend-wasm.min.js"></script>
+    <!-- load Pixi -->
+    <script src="./lib/pixi/pixi.min.js"></script>
+    <!-- load Perlin -->
+    <script src="./lib/perlin.js"></script>
+    <!-- load Lodash -->
+    <!-- <script src="./lib/lodash.js"></script> -->
+  </head>
+  <body>
+    <div id="render-div"></div>
+    <div id="below-render-div">
+      <div id="controls-div" class="column">
+        <h3>Controls</h3>
+        <!-- <p>
+          <label for="dead-pt-check">Death Point</label>
+          <input
+            type="checkbox"
+            name="dead-pt-check"
+            id="dead-pt-check"
+            disabled="true"
+          />
+        </p> -->
+        <p>
+          <button id="play">Play</button>
+        </p>
+
+        <!-- <p>
+          <label for="mut-mag-slider">Mutation Mag (std)</label>
+          <input
+            type="range"
+            name="mut-mag-slider"
+            id="mut-mag-slider"
+            min="0.001"
+            max="0.9"
+            value="0.5"
+            step="0.001"
+          />
+        </p>
+        <p id="mut-mag-val-p"></p> -->
+        
+        <!-- <p>
+          <label for="mut-freq-slider">Mutation Freq</label>
+          <input
+            type="range"
+            name="mut-freq-slider"
+            id="mut-freq-slider"
+            min="0.001"
+            max="1.0"
+            value="0.5"
+            step="0.001"
+          />
+        </p>
+        <p id="mut-freq-val-p"></p> -->
+
+        <p>
+          <label for="ep-len-input">Episode length:</label>
+          <input
+            type="number"
+            id="ep-len-input"
+            name="ep-len-input"
+            min="1"
+            step="1"
+            value="100"
+          />
+        </p>
+
+        <!-- <p>
+          <label for="sel-ratio-input">Selection ratio:</label>
+          <input
+            type="range"
+            id="sel-ratio-input"
+            name="sel-ratio-input"
+            min="0.01"
+            max="1"
+            step="0.01"
+            value="0.2"
+          />
+          <p id="sel-ratio-val-p"></p> -->
+        </p>
+        
+      </div>
+      <div id="info-div" class="column">
+        <h3>Info</h3>
+        <p>Epoch: <span id="epoch-span"></span></p>
+        <p>Best best score: <span id="best-score-span"></span></p>
+        <p>Cutoff best score: <span id="cutoff-best-score-span"></span></p>
+        <p>Mean best score: <span id="mean-best-score-span"></span></p>
+        <p>Worst best score: <span id="worst-best-score-span"></span></p>
+      </div>
+    </div>
+
+    <script src="./main.mjs" type="module"></script>
+  </body>
+</html>
